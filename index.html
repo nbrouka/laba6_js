@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nestoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="topnav" id="search-nav"> 
+        <a class="active" href="#">Nestoria</a>
+        <div class="radio-container">
+            <input name="listing_type" type="radio" value="buy" checked="checked"> buy
+            <input name="listing_type" type="radio" value="rent"> rent
+            <input name="listing_type" type="radio" value="share"> share
+        </div>
+        <div class="select-container">
+            <select name="country" id="country-select">
+            </select>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Place.." name="place_name">
+            <button id="search-btn"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+    <div class="sidenav" id="filters-nav">
+        <p>
+            <label for="price">Price</label>
+        </p>
+        <p>
+            <input type="text" placeholder="min" name="price_min">
+        </p>
+        <p>
+            <input type="text" placeholder="max" name="price_max">
+        </p>
+        <p>
+            <label for="price">Room</label>
+        </p>
+        <p>
+            <input type="text" placeholder="min" name="room_min">
+        </p>
+        <p>
+            <input type="text" placeholder="max" name="room_max">
+        </p>
+        <p>
+            <label for="price">Bedroom</label>
+        </p>
+        <p>
+            <input type="text" placeholder="min" name="bedroom_min">
+        </p>
+        <p>
+            <input type="text" placeholder="max" name="bedroom_max">
+        </p>
+        <p>
+            <label for="price">Bathroom</label>
+        </p>
+        <p>
+            <input type="text" placeholder="min" name="bathroom_min"> 
+        </p>
+        <p>
+            <input type="text" placeholder="max" name="bathroom_max">
+        </p>
+        </div>
+        <div class="main">
+            <div class="error" id="nestoria-error"></div>
+            <ul id="nestoria-result" class="infinite-list"></ul>    
+            <div id="nestoria-modal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h1 id="title"></h1>
+                  <div class="inline-div left">
+                  <img id="img_url" src="">
+                  </div>  
+                  <div class="inline-div right">
+                    <p>
+                        <b>Price: </b>
+                        <span id="price_formatted"></span>
+                    </p>     
+                    <p>
+                        <b>Type: </b>
+                        <span id="property_type"></span>
+                    </p> 
+                    <p>
+                        <b>Summary: </b>
+                        <span id="summary"></span>
+                    </p> 
+                    <p>
+                        <b>Url: </b>
+                        <a id="lister_url" href="" target="_blank"></a>
+                    </p> 
+                  </div>
+                  <div id="google-map-listing">
+
+                  </div>
+                </div>          
+            </div>
+        </div>
+    <script src="config.js"></script>
+    <script src="request.js"></script>
+    <script src="nestoria.api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
